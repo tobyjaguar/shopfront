@@ -1,8 +1,14 @@
-import React, { Component }   from 'react';
-import { connect }            from 'react-redux';
-import { bindActionCreators } from 'redux';
-import AppBar                 from 'components/AppBar';
-import Button                 from 'components/Button';
+import  React, { Component }   from  'react';
+import  { connect }            from  'react-redux';
+import  { Link }               from  'react-router-dom'
+import  { bindActionCreators } from  'redux';
+import  AppBar                 from  'components/AppBar';
+import  RaisedButton           from 'material-ui/RaisedButton';
+import { withRouter }         from  'react-router-dom';
+
+/*  components */
+import  GetShop                from  'components/GetShop'
+import  GetAdmin                from  'components/GetAdmin'
 
 /* actions */
 import * as uiActionCreators from 'core/actions/actions-ui';
@@ -19,19 +25,27 @@ class Header extends Component {
     this.props.actions.ui.openNav();
   }
 
+  linkHome=() => {
+    const { history } = this.props
+    history.push(`/shop`)
+  }
+
   render() {
     return (
       <div className={styles}>
         <header>
           <AppBar
-            title="React Dapp Boilerplate"
-            onLeftIconButtonTouchTap={this.handleToggle} />
-            <div id="header-btn1">
-              <a href="https://github.com/hackingbeauty/react-dapp-boilerplate"><Button label="SOURCE CODE" flat={true} /></a>
-            </div>
-            <div id="header-btn2" >
-              <a href="https://github.com/hackingbeauty/react-dapp-boilerplate/blob/master/README.md"><Button label="DOCS" flat={true} /></a>
-            </div>
+            title="Ethereum Shopfront"
+            onLeftIconButtonTouchTap={this.handleToggle}
+          />
+          <div id="header-btn2">
+            <RaisedButton
+                   className="btn"
+                   label="Return to Shop"
+                   backgroundColor="#ffa000"
+                   onClick={this.linkHome}
+                 />
+          </div>
         </header>
       </div>
     );
@@ -52,4 +66,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

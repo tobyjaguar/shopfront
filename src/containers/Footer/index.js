@@ -12,7 +12,7 @@ class Footer extends Component {
   render() {
     return (
       <div className={styles}>
-        <p>This project is currently maintained by <a href="https://github.com/hackingbeauty">hackingbeauty</a>.</p>
+        <p>Simple DApp store made with react.</p>
       </div>
     );
   }

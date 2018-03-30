@@ -1,0 +1,62 @@
+componentWillReceiveProps(nextProps) {
+  this.updateProduct(nextProps.refID)
+}
+
+const { actions } = this.props
+return actions.contract.getProductFromShop(this.refID)
+.then(result => {
+  return this.setState({
+    productArray: result
+  })
+})
+const ResultExists = IdArray ? true : false
+
+<RaisedButton className="btn" label="Get" backgroundColor="#ffa000" onClick={this.updateProduct} />
+
+
+componentWillReceiveProps(nextProps) {
+  console.log("willReceive" + count)
+  const { actions } = this.props
+  actions.contract.getProductFromShop(nextProps.refID)
+}
+
+
+for(let i=0; i < contract.totalProducts; i++) {
+  actions.contract.getProductFromShop(i)
+}
+
+return actions.contract.getProductFromShop(this.state.refID)
+
+<div>
+  {this.props.name}
+</div>
+<div>
+  {this.props.price+1}
+</div>
+<div>
+  {this.props.stock}
+</div>
+<RaisedButton
+       className="btn"
+       label="Buy"
+       backgroundColor="#ffa000"
+       onClick={this.purchaseProduct}
+     />
+
+     componentWillReceiveProps(nextProps) {
+       const { match, actions, contract } = this.props
+       const product_code = parseInt(this.props.match.params.idRef)
+       if(nextProps.provider.web3Provider !== null && nextProps.match.isExact && this.state.init === false) {
+         actions.contract.getProductFromShop(product_code)
+         this.setState({
+           contract_ref_id: parseInt(product_code),
+           product_id: parseInt(contract.productID),
+           name: contract.productName,
+           price: parseInt(contract.productPrice),
+           stock: parseInt(contract.productStock),
+           init: true
+         })
+       }
+     }
+
+this.state.init === false

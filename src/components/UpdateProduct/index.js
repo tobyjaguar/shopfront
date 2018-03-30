@@ -1,0 +1,117 @@
+import  React, { Component }   from 'react'
+import  { connect }            from 'react-redux'
+import  { bindActionCreators } from 'redux'
+import  Web3                   from 'web3'
+import  RaisedButton           from 'material-ui/RaisedButton';
+import  TextField              from 'material-ui/TextField';
+
+/* component styles */
+import { styles } from './styles.scss'
+
+/* actions */
+import * as contractActionCreators from 'core/actions/actions-contract'
+
+class UpdateProduct extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      refID: 0,
+      name: '',
+      price: 0,
+      stock: 0
+    };
+  }
+
+  handleChange=(evt) => {
+    switch (evt.target.id) {
+      case "product_id":
+        return this.setState({
+          refID: evt.target.value
+        })
+      case "product_name":
+        return this.setState({
+          name: evt.target.value
+        })
+      case "product_price":
+        return this.setState({
+          price: evt.target.value
+        })
+      case "product_stock":
+        return this.setState({
+          stock: evt.target.value
+        })
+    }
+  }
+
+  updateProduct=() => {
+    const { actions } = this.props
+    const productName = Web3.utils.toHex(this.state.name)
+    actions.contract.updateProductToShop(this.state.refID, productName, this.state.price, this.state.stock)
+  }
+
+  render() {
+    const { contract } = this.props
+
+    return (
+      <div className={styles}>
+        <div className="section">
+          <div>
+          <span className="label"><h4>Product ID:</h4>
+          <TextField
+                  id="product_id"
+                  type="number"
+                  value={this.state.refID}
+                  inputStyle={{color: '#EEECEC'}}
+                  onChange={this.handleChange}
+                />
+          </span>
+          <span className="label"><h4>Name:</h4>
+            <TextField
+              id="product_name"
+              type="text"
+              value={this.state.name}
+              inputStyle={{color: '#EEECEC'}}
+              onChange={this.handleChange}
+            />
+          </span>
+          <span className="label"><h4>Price:</h4>
+          <TextField
+            id="product_price"
+            type="number"
+            value={this.state.price}
+            inputStyle={{color: '#EEECEC'}}
+            onChange={this.handleChange}
+            />
+        </span>
+        <span className="label"><h4>Stock:</h4>
+        <TextField
+          id="product_stock"
+          type="number"
+          value={this.state.stock}
+          inputStyle={{color: '#EEECEC'}}
+          onChange={this.handleChange}
+          />
+      </span>
+    </div>
+      <RaisedButton className="btn" label="Update" backgroundColor="#ffa000" onClick={this.updateProduct} />
+        </div>
+      </div>
+    );
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    contract: state.contract
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      contract: bindActionCreators(contractActionCreators, dispatch)
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UpdateProduct);

@@ -1,0 +1,5 @@
+componentDidUpdate(prevProps, prevState) {
+  const { actions, contract } = this.props
+  if(prevProps.provider.web3Provider !== null && prevProps.contract.initProducts === false)
+    actions.contract.initProductList()
+}

@@ -1,0 +1,54 @@
+<GetProduct
+  refID={index}
+/>
+
+
+function getProductFromContract(ShopFrontContract, account, refID, resolve) {
+  ShopFrontContract.deployed()
+  .then(instance => {
+    return instance.productList.call(0, {from: account});
+  })
+  .then(IdArray => {
+    resolve(IdArray)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+}
+
+
+componentWillMount() {
+  const { actions, provider } = this.props
+
+  if(provider.web3Provider !== null) {
+    actions.contract.getNumberOfProductsFromShop()
+    .then(() => {
+      this.setState({
+        numOfProducts: contract.totalProducts
+      })
+    })
+  }
+}
+
+componentWillUpdate(nextProps, nextState) {
+  const { actions, provider, contract } = this.props
+  if(nextProps.provider.web3Provider !== null && contract.adminAddress === "") {
+      this.resetProducts()
+  }
+}
+
+getAllProducts() {
+  const { contract } = this.props
+  const productElement = contract.products.map((productItem, index) => {
+  var productName = Web3.utils.toAscii(productItem[0])
+    return (
+      <Link key={`product-${index+1}`} to={`/product/${index+1}`}>
+          <GetProduct
+            refID={index + 1}
+            name={productName}
+          />
+    </Link>
+    )
+  })
+  return productElement
+}

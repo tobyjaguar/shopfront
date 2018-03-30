@@ -1,0 +1,1171 @@
+{
+  "contract_name": "ShopFront",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "banAddress",
+          "type": "address"
+        }
+      ],
+      "name": "banUser",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        },
+        {
+          "name": "_balance",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdrawFunds",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "idRef",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "shopBalance",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "name": "_price",
+          "type": "uint256"
+        },
+        {
+          "name": "_stock",
+          "type": "uint256"
+        }
+      ],
+      "name": "addProduct",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "productList",
+      "outputs": [
+        {
+          "name": "name",
+          "type": "bytes32"
+        },
+        {
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "name": "stock",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_customer",
+          "type": "address"
+        }
+      ],
+      "name": "reconcileBalance",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_refId",
+          "type": "uint256"
+        },
+        {
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "name": "_price",
+          "type": "uint256"
+        },
+        {
+          "name": "_stock",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateProduct",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "returnChange",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "changeOwner",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "users",
+      "outputs": [
+        {
+          "name": "idRef",
+          "type": "uint256"
+        },
+        {
+          "name": "change",
+          "type": "uint256"
+        },
+        {
+          "name": "purchaseBlock",
+          "type": "uint256"
+        },
+        {
+          "name": "isBanned",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "changeExpiry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_admin",
+          "type": "address"
+        },
+        {
+          "name": "_expiry",
+          "type": "uint256"
+        }
+      ],
+      "name": "setupShop",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "running",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "depositFunds",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_refId",
+          "type": "uint256"
+        },
+        {
+          "name": "_numToBuy",
+          "type": "uint8"
+        }
+      ],
+      "name": "buyProduct",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eIDRef",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "eName",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "ePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "eStock",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogAddProduct",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eIDRef",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "eName",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "ePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "eStock",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogUpdateProduct",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eIDRef",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "eName",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "ePrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "eStock",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogProductPurchased",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eBuyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eIDRef",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogChangeSent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogFundsSentToShop",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogWithdrawFromShop",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "customer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogReconciledBalance",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eBanAddress",
+          "type": "address"
+        }
+      ],
+      "name": "LogBanUser",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        }
+      ],
+      "name": "LogShopFrozen",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        }
+      ],
+      "name": "LogShopUnfrozen",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "eSender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eNewOwner",
+          "type": "address"
+        }
+      ],
+      "name": "LogShopGotNewOwner",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "runningState",
+          "type": "bool"
+        }
+      ],
+      "name": "LogStopSwitch",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "oldOwner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "LogNewOwner",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x60606040525b5b60008054600160a060020a03191633600160a060020a03161790555b6000805460a060020a60ff021916740100000000000000000000000000000000000000001790555b5b610de18061005a6000396000f300606060405236156101045763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166310d86b1f811461010957806312065fe01461013c578063155dd5ee1461016957806336361246146101935780634d1607bc146101b857806352656a38146101dd578063528c87d21461020d5780635546f0cf1461024757806372ddbf5b1461027a5780638da5cb5b146102ad5780638edcd995146102dc578063a6f9dae114610303578063a87430ba14610336578063ad6cd4ae14610381578063c582e856146103a6578063d85bd526146103dc578063e2c41dbc14610403578063f4c22cbd1461041f578063f851a44014610444575b600080fd5b341561011457600080fd5b610128600160a060020a0360043516610473565b604051901515815260200160405180910390f35b341561014757600080fd5b61014f610523565b604051911515825260208201526040908101905180910390f35b341561017457600080fd5b61012860043561052e565b604051901515815260200160405180910390f35b341561019e57600080fd5b6101a66105f9565b60405190815260200160405180910390f35b34156101c357600080fd5b6101a66105ff565b60405190815260200160405180910390f35b34156101e857600080fd5b610128600435602435604435610605565b604051901515815260200160405180910390f35b341561021857600080fd5b610223600435610714565b60405192835260208301919091526040808301919091526060909101905180910390f35b341561025257600080fd5b610128600160a060020a0360043516610735565b604051901515815260200160405180910390f35b341561028557600080fd5b61012860043560243560443560643561082f565b604051901515815260200160405180910390f35b34156102b857600080fd5b6102c0610946565b604051600160a060020a03909116815260200160405180910390f35b34156102e757600080fd5b610128610955565b604051901515815260200160405180910390f35b341561030e57600080fd5b610128600160a060020a0360043516610acb565b604051901515815260200160405180910390f35b341561034157600080fd5b610355600160a060020a0360043516610b5e565b604051938452602084019290925260408084019190915290151560608301526080909101905180910390f35b341561038c57600080fd5b6101a6610b88565b60405190815260200160405180910390f35b34156103b157600080fd5b610128600160a060020a0360043516602435610b8e565b604051901515815260200160405180910390f35b34156103e757600080fd5b610128610c0e565b604051901515815260200160405180910390f35b610128610c1e565b604051901515815260200160405180910390f35b61012860043560ff60243516610c63565b604051901515815260200160405180910390f35b341561044f57600080fd5b6102c0610da6565b604051600160a060020a03909116815260200160405180910390f35b60015460009033600160a060020a0390811691161461049157600080fd5b60005460a060020a900460ff1615156104a957600080fd5b600160a060020a03821660009081526006602052604090819020600301805460ff191660011790557f29539d6a6cea8a2bac99c9bfa3f401174bbb082dc193d0b3111efb0cf3ca0cb3903390849051600160a060020a039283168152911660208201526040908101905180910390a15060015b5b5b919050565b6003546001905b9091565b6000805433600160a060020a0390811691161461054a57600080fd5b60005460a060020a900460ff16151561056257600080fd5b600354821061057057600080fd5b600380548390039055600160a060020a03331682156108fc0283604051600060405180830381858888f1935050505015156105aa57600080fd5b7f90b4d9e0e4a59d3e6ee85c5c1b7a79045ab588484ba5e92939253855704729213383604051600160a060020a03909216825260208201526040908101905180910390a15060015b5b5b919050565b60025481565b60035481565b60015460009033600160a060020a0390811691161461062357600080fd5b60005460a060020a900460ff16151561063b57600080fd5b831580159061064957508215155b801561065457508115155b151561065f57600080fd5b6002805460019081018083556000908152600560205260408082208890558354825280822083018790558354825280822084018690558354808352918190208054938101549401547f67625d7d67b14b9bb78a97da63bbfcfcfda46fd9710571c43972db18c352b31d9433949290919051600160a060020a03909516855260208501939093526040808501929092526060840152608083019190915260a0909101905180910390a15060015b5b5b9392505050565b60056020526000908152604090208054600182015460029092015490919083565b60015460009033600160a060020a0390811691161461075357600080fd5b60005460a060020a900460ff16151561076b57600080fd5b600454600160a060020a033316600090815260066020526040902060020154439101111561079857600080fd5b600160a060020a033316600090815260066020526040908190206001018054600380549091019055547ff5fa9df2c79df6611972d3e2381522d9b4722f214684ec231ed44cfa5dcaf9379184919051600160a060020a03909216825260208201526040908101905180910390a150600160a060020a03331660009081526006602052604081206001908101919091555b5b5b919050565b60015460009033600160a060020a0390811691161461084d57600080fd5b60005460a060020a900460ff16151561086557600080fd5b841580159061087357508315155b801561087e57508215155b801561088957508115155b151561089457600080fd5b60008581526005602052604090206001015415156108b157600080fd5b600085815260056020526040908190208581556001810185905560020180548401908190557faaf5cc32bc5d13d487eac9c5a140a629fbad4421921acc27f5647152bb83cdb391339188918891889151600160a060020a03909516855260208501939093526040808501929092526060840152608083019190915260a0909101905180910390a15060015b5b5b949350505050565b600054600160a060020a031681565b60008054819060a060020a900460ff16151561097057600080fd5b600160a060020a03331660009081526006602052604090206003015460ff161561099957600080fd5b600160a060020a03331615156109ae57600080fd5b600160a060020a03331660009081526006602052604090206001015415156109d557600080fd5b600454600160a060020a033316600090815260066020526040902060020154014310610a0057600080fd5b50600160a060020a033316600081815260066020526040808220600101805492905590919082156108fc0290839051600060405180830381858888f193505050501515610a4c57600080fd5b33600160a060020a03811660009081526006602052604090819020547f04ee76a5e975a17c4f733ea282bd1b94a5b2e6c371675c0b81738b99b4c9c80692918490518084600160a060020a0316600160a060020a03168152602001838152602001828152602001935050505060405180910390a1600191505b5b5b5090565b600080547f95a4124b32fadd40e6e63088992a62e3505e61d1683b783d03e575d7c1dfb967903390600160a060020a031684604051600160a060020a03938416815291831660208301529091166040808301919091526060909101905180910390a1506000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03831617905560015b919050565b60066020526000908152604090208054600182015460028301546003909301549192909160ff1684565b60045481565b6000805433600160a060020a03908116911614610baa57600080fd5b60005460a060020a900460ff161515610bc257600080fd5b600160a060020a0383161515610bd757600080fd5b506001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03841617815560048290555b5b5b92915050565b60005460a060020a900460ff1681565b6000805433600160a060020a03908116911614610c3a57600080fd5b60005460a060020a900460ff161515610c5257600080fd5b50600380543401905560015b5b5b90565b6000805460a060020a900460ff161515610c7c57600080fd5b600160a060020a0333161515610c9157600080fd5b600083815260056020526040902060010154341015610caf57600080fd5b60008381526005602052604090206002015460ff83161115610cd057600080fd5b60008381526005602081815260408084206001808201805433600160a060020a0381168952600687528589203492909203938201939093558a815543600291820155968a905294909352938401805460ff88169003815583546003805490910190559354925493547f1423e506294a935fd63a38a9153d44db2962036eaf87e5670614add083eb1d0e9492938893909290919051600160a060020a03909516855260208501939093526040808501929092526060840152608083019190915260a0909101905180910390a15060015b5b92915050565b600154600160a060020a0316815600a165627a7a72305820460b481c8250ec2ed6c531779733f583b5e071256984bd61a0a62ab20514dceb0029",
+  "networks": {
+    "1522438537583": {
+      "events": {
+        "0x67625d7d67b14b9bb78a97da63bbfcfcfda46fd9710571c43972db18c352b31d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "ePrice",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogAddProduct",
+          "type": "event"
+        },
+        "0xaaf5cc32bc5d13d487eac9c5a140a629fbad4421921acc27f5647152bb83cdb3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "ePrice",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogUpdateProduct",
+          "type": "event"
+        },
+        "0x1423e506294a935fd63a38a9153d44db2962036eaf87e5670614add083eb1d0e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "buyer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "ePrice",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogProductPurchased",
+          "type": "event"
+        },
+        "0x04ee76a5e975a17c4f733ea282bd1b94a5b2e6c371675c0b81738b99b4c9c806": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eBuyer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogChangeSent",
+          "type": "event"
+        },
+        "0x1303230e7892e8fe9bac6e601cd2419ff2866211631abbdfe37e69a6750d5cd8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogFundsSentToShop",
+          "type": "event"
+        },
+        "0x90b4d9e0e4a59d3e6ee85c5c1b7a79045ab588484ba5e9293925385570472921": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogWithdrawFromShop",
+          "type": "event"
+        },
+        "0xf5fa9df2c79df6611972d3e2381522d9b4722f214684ec231ed44cfa5dcaf937": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "customer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogReconciledBalance",
+          "type": "event"
+        },
+        "0x29539d6a6cea8a2bac99c9bfa3f401174bbb082dc193d0b3111efb0cf3ca0cb3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eBanAddress",
+              "type": "address"
+            }
+          ],
+          "name": "LogBanUser",
+          "type": "event"
+        },
+        "0xb7bf7ffbf2e1d1f36468a4e6ba66627205fa6ab4e3d0c4aa2d71564160cb1fa8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            }
+          ],
+          "name": "LogShopFrozen",
+          "type": "event"
+        },
+        "0xa6dd58bcda1990347b57eda89ac8e89822129c26f8b809bf4c9db2eb3eb011dc": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            }
+          ],
+          "name": "LogShopUnfrozen",
+          "type": "event"
+        },
+        "0x2ff2b1075178548dcb6b4c2cd9e94ebf1c208b342d6707725173bc1564bbb483": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eNewOwner",
+              "type": "address"
+            }
+          ],
+          "name": "LogShopGotNewOwner",
+          "type": "event"
+        },
+        "0x34d10a1c82f64d56a91cc028d8fa724cc1f59245cad65b5fcb6c9973566c6b84": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "runningState",
+              "type": "bool"
+            }
+          ],
+          "name": "LogStopSwitch",
+          "type": "event"
+        },
+        "0x95a4124b32fadd40e6e63088992a62e3505e61d1683b783d03e575d7c1dfb967": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "oldOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "LogNewOwner",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x8bdb55c1c57babdd0e53f19350c02bec3131195b",
+      "updated_at": 1522438558606
+    },
+    "1522440743832": {
+      "events": {
+        "0x67625d7d67b14b9bb78a97da63bbfcfcfda46fd9710571c43972db18c352b31d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "ePrice",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogAddProduct",
+          "type": "event"
+        },
+        "0xaaf5cc32bc5d13d487eac9c5a140a629fbad4421921acc27f5647152bb83cdb3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "ePrice",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogUpdateProduct",
+          "type": "event"
+        },
+        "0x1423e506294a935fd63a38a9153d44db2962036eaf87e5670614add083eb1d0e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "buyer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eName",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "ePrice",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "eStock",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogProductPurchased",
+          "type": "event"
+        },
+        "0x04ee76a5e975a17c4f733ea282bd1b94a5b2e6c371675c0b81738b99b4c9c806": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eBuyer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eIDRef",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogChangeSent",
+          "type": "event"
+        },
+        "0x1303230e7892e8fe9bac6e601cd2419ff2866211631abbdfe37e69a6750d5cd8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogFundsSentToShop",
+          "type": "event"
+        },
+        "0x90b4d9e0e4a59d3e6ee85c5c1b7a79045ab588484ba5e9293925385570472921": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogWithdrawFromShop",
+          "type": "event"
+        },
+        "0xf5fa9df2c79df6611972d3e2381522d9b4722f214684ec231ed44cfa5dcaf937": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "customer",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eAmount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogReconciledBalance",
+          "type": "event"
+        },
+        "0x29539d6a6cea8a2bac99c9bfa3f401174bbb082dc193d0b3111efb0cf3ca0cb3": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eBanAddress",
+              "type": "address"
+            }
+          ],
+          "name": "LogBanUser",
+          "type": "event"
+        },
+        "0xb7bf7ffbf2e1d1f36468a4e6ba66627205fa6ab4e3d0c4aa2d71564160cb1fa8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            }
+          ],
+          "name": "LogShopFrozen",
+          "type": "event"
+        },
+        "0xa6dd58bcda1990347b57eda89ac8e89822129c26f8b809bf4c9db2eb3eb011dc": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            }
+          ],
+          "name": "LogShopUnfrozen",
+          "type": "event"
+        },
+        "0x2ff2b1075178548dcb6b4c2cd9e94ebf1c208b342d6707725173bc1564bbb483": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "eSender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eNewOwner",
+              "type": "address"
+            }
+          ],
+          "name": "LogShopGotNewOwner",
+          "type": "event"
+        },
+        "0x34d10a1c82f64d56a91cc028d8fa724cc1f59245cad65b5fcb6c9973566c6b84": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "runningState",
+              "type": "bool"
+            }
+          ],
+          "name": "LogStopSwitch",
+          "type": "event"
+        },
+        "0x95a4124b32fadd40e6e63088992a62e3505e61d1683b783d03e575d7c1dfb967": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "oldOwner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "LogNewOwner",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x4d336f17857cc63ee64fdd863f3e11fc5d520408",
+      "updated_at": 1522440763030
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1522440763030
+}

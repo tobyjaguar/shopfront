@@ -1,0 +1,28 @@
+componentWillReceiveProps(nextProps) {
+  this.updateProduct(nextProps.refID)
+}
+
+const { actions } = this.props
+return actions.contract.getProductFromShop(this.refID)
+.then(result => {
+  return this.setState({
+    productArray: result
+  })
+})
+const ResultExists = IdArray ? true : false
+
+<RaisedButton className="btn" label="Get" backgroundColor="#ffa000" onClick={this.updateProduct} />
+
+
+componentWillReceiveProps(nextProps) {
+  console.log("willReceive" + count)
+  const { actions } = this.props
+  actions.contract.getProductFromShop(nextProps.refID)
+}
+
+
+for(let i=0; i < contract.totalProducts; i++) {
+  actions.contract.getProductFromShop(i)
+}
+
+return actions.contract.getProductFromShop(this.state.refID)

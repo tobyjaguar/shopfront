@@ -5,6 +5,9 @@ import { Drawer,
          AppBar,
          Divider }            from 'material-ui';
 
+/* components */
+import CreateShop             from 'components/CreateShop'
+
 /* component styles */
 import { styles } from './styles.scss';
 
@@ -29,7 +32,7 @@ class LeftNavBar extends Component {
           onRequestChange={this.closeNav}>
           <AppBar title="" />
           <Divider />
-          <p>A common UI pattern is to put non-essential links and information in this drawer.</p>
+          <p>Welcome to the store, yay!</p>
         </Drawer>
       </div>
     );

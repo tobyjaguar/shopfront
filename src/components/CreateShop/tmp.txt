@@ -1,0 +1,6 @@
+createShop=() => {
+  actions.contract.createShop(this.state.value)
+  console.log("create");
+}
+
+style={{ backgroundColor: '#fff' }}
