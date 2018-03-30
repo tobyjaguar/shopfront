@@ -1,7 +1,6 @@
 import React, { Component }   from 'react'
 import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
-import RaisedButton           from 'material-ui/RaisedButton';
 
 /* component styles */
 import { styles } from './styles.scss'
@@ -15,15 +14,15 @@ class GetAdmin extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { actions, provider, contract } = this.props
-    if(nextProps.provider.web3Provider !== null && contract.adminAddress === "") {
+    const { contract } = this.props
+    if(nextProps.provider.web3Provider !== null && contract.adminAddress === '') {
       this.getAdminAddress()
     }
   }
 
   getAdminAddress() {
     const { actions, contract } = this.props
-    if(contract.adminAddress === "0x0000000000000000000000000000000000000000") {
+    if(contract.adminAddress === '0x0000000000000000000000000000000000000000') {
       actions.contract.getAdminFromShop()
     }
   }

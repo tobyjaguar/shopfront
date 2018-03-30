@@ -5,9 +5,6 @@ import { Drawer,
          AppBar,
          Divider }            from 'material-ui';
 
-/* components */
-import CreateShop             from 'components/CreateShop'
-
 /* component styles */
 import { styles } from './styles.scss';
 

@@ -3,8 +3,6 @@ import { connect }            from  'react-redux'
 import { bindActionCreators } from  'redux'
 import { withRouter }         from  'react-router-dom';
 import RaisedButton           from  'material-ui/RaisedButton';
-import TextField              from  'material-ui/TextField';
-import { Dialog }             from  'material-ui'
 import Web3                   from  'web3'
 
 /* component styles */
@@ -52,19 +50,18 @@ class ProductView extends Component {
 
   getProduct() {
     const { match, actions } = this.props
-      actions.contract.getProductFromShop(match.params.idRef)
+    actions.contract.getProductFromShop(match.params.idRef)
   }
 
   setProductView() {
     const { match, contract } = this.props
-    const product_code = parseInt(match.params.idRef) - 1
     if(contract.products.length) {
       this.setState({
         contract_ref_id: parseInt(match.params.idRef),
         product_id: contract.productRefId,
         name: Web3.utils.toAscii(contract.productName),
         price: parseInt(contract.productPrice),
-        stock: parseInt(contract.productStock),
+        stock: parseInt(contract.productStock)
       })
     }
   }
@@ -77,11 +74,11 @@ class ProductView extends Component {
   }
 
   groomName() {
-    const { match, contract } = this.props
-    if(contract.productName !== "") {
+    const { contract } = this.props
+    if(contract.productName !== '') {
       return Web3.utils.toAscii(contract.productName)
     } else {
-      return "product name error"
+      return 'product name error'
     }
   }
 

@@ -18,7 +18,6 @@ import './styles/app.scss';
 import Header       from 'containers/Header';
 import LeftNavBar   from 'containers/LeftNavBar';
 import Home         from 'containers/Home';
-import Footer       from 'containers/Footer';
 import ProductView  from 'containers/ProductView';
 
 /* actions */

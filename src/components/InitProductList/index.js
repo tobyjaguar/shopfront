@@ -7,7 +7,6 @@ import { styles } from './styles.scss'
 
 /* actions */
 import * as contractActionCreators from 'core/actions/actions-contract'
-import * as providerActionCreators from 'core/actions/actions-provider'
 
 class InitProductList extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class InitProductList extends Component {
   }
 
   initProductList() {
-    const { actions, contract } = this.props
+    const { actions } = this.props
     if(this.state.initPList === false) {
       actions.contract.resetLocalProductList()
       this.setState({
@@ -34,7 +33,7 @@ class InitProductList extends Component {
 
   render() {
     return (
-      <div>
+      <div className={styles}>
       </div>
     );
   }

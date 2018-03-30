@@ -1,7 +1,6 @@
 import React, { Component }   from 'react'
 import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
-import RaisedButton           from 'material-ui/RaisedButton';
 
 /* component styles */
 import { styles } from './styles.scss'
@@ -15,8 +14,8 @@ class GetShop extends Component {
     super(props);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    const { actions, provider } = this.props
+  componentDidUpdate(prevProps) {
+    const { actions } = this.props
 
     if(prevProps.provider.web3Provider !== this.props.provider.web3Provider) {
       actions.contract.getContractAddress()

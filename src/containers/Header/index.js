@@ -1,14 +1,9 @@
 import  React, { Component }   from  'react';
 import  { connect }            from  'react-redux';
-import  { Link }               from  'react-router-dom'
 import  { bindActionCreators } from  'redux';
 import  AppBar                 from  'components/AppBar';
 import  RaisedButton           from 'material-ui/RaisedButton';
 import { withRouter }         from  'react-router-dom';
-
-/*  components */
-import  GetShop                from  'components/GetShop'
-import  GetAdmin                from  'components/GetAdmin'
 
 /* actions */
 import * as uiActionCreators from 'core/actions/actions-ui';
@@ -27,7 +22,7 @@ class Header extends Component {
 
   linkHome=() => {
     const { history } = this.props
-    history.push(`/shop`)
+    history.push('/shop')
   }
 
   render() {

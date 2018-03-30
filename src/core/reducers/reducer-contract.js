@@ -50,20 +50,20 @@ export function contractReducer(state = initialState, action) {
       purchasePrice: action.purchasePrice,
       purchaseStock: action.purchaseStock
     })
-    case constants.QUERY_PRODUCT:
-      return Object.assign({}, state, {
-        productName: action.productName,
-        productPrice: action.productPrice,
-        productStock: action.productStock
-      })
+  case constants.QUERY_PRODUCT:
+    return Object.assign({}, state, {
+      productName: action.productName,
+      productPrice: action.productPrice,
+      productStock: action.productStock
+    })
   case constants.GET_PRODUCT:
-    const len = state.products.length
-    const newProductList = state.products.slice();
+    var len = state.products.length
+    var newProductList = state.products.slice();
     newProductList.splice(len, 0, action.productObj);
 
     return Object.assign({}, state, {
       products: newProductList
-      })
+    })
   case constants.RESET_PRODUCTS:
     return Object.assign({}, state, {
       products: []

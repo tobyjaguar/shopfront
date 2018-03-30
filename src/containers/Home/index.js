@@ -1,12 +1,8 @@
 import React, { Component } from  'react';
-import PropTypes              from 'prop-types'
 import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 /* components */
-import img                  from  'assets/images/react-dapps.png'
-import TextField            from  'components/TextField'
-import Button               from  'components/Button'
 import CreateShop           from  'components/CreateShop'
 import GetAccount           from  'components/GetAccount'
 import GetShop              from  'components/GetShop'
@@ -29,7 +25,6 @@ class Home extends Component {
   }
 
   render() {
-    const { contract } = this.props
     return (
       <div className={styles}>
       <div id="banner">

@@ -20,7 +20,7 @@ class Modal extends Component {
   navToShop=() => {
     const { history, actions } = this.props
     actions.contract.togglePurchaseModal(false)
-    history.push(`/shop`)
+    history.push('/shop')
   }
 
   handleClose=() => {
@@ -29,8 +29,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { title, content, className, customStyles, contract } = this.props
-    const mergedStyles = styles + ' ' + className
+    const { title, content, contract } = this.props
     const actions = [
       <RaisedButton
         className="btn"
@@ -46,7 +45,7 @@ class Modal extends Component {
       />
     ]
     return(
-      <div>
+      <div className={styles}>
         <Dialog
           title={title}
           actions={actions}

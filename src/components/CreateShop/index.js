@@ -17,7 +17,7 @@ class CreateShop extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 5,
+      value: 5
     };
   }
 
@@ -55,7 +55,7 @@ class CreateShop extends Component {
 }
 
 CreateShop.propTypes = {
-
+  value : PropTypes.number
 }
 
 function mapStateToProps(state) {

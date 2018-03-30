@@ -20,12 +20,11 @@ class GetProduct extends Component {
   }
 
   render() {
-
-      return (
-        <div className={styles}>
-          <div className="label">{this.props.name}</div>
-        </div>
-      );
+    return (
+      <div className={styles}>
+        <div className="label">{this.props.name}</div>
+      </div>
+    );
   }
 }
 

@@ -24,22 +24,22 @@ class UpdateProduct extends Component {
 
   handleChange=(evt) => {
     switch (evt.target.id) {
-      case "product_id":
-        return this.setState({
-          refID: evt.target.value
-        })
-      case "product_name":
-        return this.setState({
-          name: evt.target.value
-        })
-      case "product_price":
-        return this.setState({
-          price: evt.target.value
-        })
-      case "product_stock":
-        return this.setState({
-          stock: evt.target.value
-        })
+    case 'product_id':
+      return this.setState({
+        refID: evt.target.value
+      })
+    case 'product_name':
+      return this.setState({
+        name: evt.target.value
+      })
+    case 'product_price':
+      return this.setState({
+        price: evt.target.value
+      })
+    case 'product_stock':
+      return this.setState({
+        stock: evt.target.value
+      })
     }
   }
 
@@ -50,8 +50,6 @@ class UpdateProduct extends Component {
   }
 
   render() {
-    const { contract } = this.props
-
     return (
       <div className={styles}>
         <div className="section">

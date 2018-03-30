@@ -4,7 +4,6 @@ import  { bindActionCreators }  from  'redux'
 import  { Link }                from  'react-router-dom'
 import  Web3                    from  'web3'
 import  RaisedButton            from  'material-ui/RaisedButton'
-import  TextField               from  'material-ui/TextField'
 import  GetProduct              from  'components/GetProduct'
 
 /* component styles */
@@ -12,7 +11,6 @@ import { styles } from './styles.scss'
 
 /* actions */
 import * as contractActionCreators from 'core/actions/actions-contract'
-import * as providerActionCreators from 'core/actions/actions-provider'
 
 import InitProductList          from  'components/InitProductList'
 
@@ -30,7 +28,7 @@ class ListProducts extends Component {
   getAllProducts() {
     const { contract } = this.props
     const productElement = contract.products.map((productItem, index) => {
-    var productName = Web3.utils.toAscii(productItem[0])
+      var productName = Web3.utils.toAscii(productItem[0])
       return (
         <Link key={`product-${index+1}`} to={`/product/${index+1}`}>
             <GetProduct
