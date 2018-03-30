@@ -1,0 +1,16 @@
+@import '../../containers/App/styles/variables';
+
+:local(.styles) {
+  background: $grey35;
+  color: $white;
+  height: 50px;
+  padding: 40px;
+
+  a {
+    color: $gold;
+  }
+
+  p {
+    color: inherit;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../containers/App/styles/variables';
+
+:local(.styles) {
+  position: relative;
+
+  .btn {
+    color: $gold !important;
+    span {
+      font-size: 16px !important;
+    }
+  }
+
+  #header-btn1,
+  #header-btn2 {
+    position: absolute;
+    top: 14px;
+    z-index: 10000;
+  }
+
+  #header-btn1 {
+    right: 160px;
+  }
+
+  #header-btn2 {
+    right: 50px;
+  }
+}

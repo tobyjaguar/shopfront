@@ -1,0 +1,11 @@
+@import '../../containers/App/styles/variables';
+
+:local(.styles) {
+
+  .btn {
+    button {
+      background-color: $gold !important;
+    }
+  }
+
+}
