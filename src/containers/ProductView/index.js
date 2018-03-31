@@ -31,21 +31,37 @@ class ProductView extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(nextProps.contract.purchaseTX !== this.props.contract.purchaseTX) {
+    const { provider, contract } = this.props
+    if(nextProps.contract.purchaseTX !== contract.purchaseTX) {
       this.props.actions.contract.togglePurchaseModal(true)
+    }
+    if(nextProps.provider.web3Provider !== provider.web3Provider) {
+      this.getProduct()
     }
   }
 
   componentDidUpdate(prevProps) {
-    if(prevProps.contract.productStock !== this.props.contract.productStock) {
+    const { contract } = this.props
+    if(prevProps.contract.productStock !== contract.productStock) {
       this.setProductView()
     }
   }
 
   componentDidMount() {
-    if(this.props.provider.web3Provider !== null) {
+    const { actions, history, provider} = this.props
+    actions.contract.pushRoute(history.location.pathname)
+    if(provider.web3Provider !== null) {
       this.getProduct()
     }
+  }
+
+  componentWillUnmount() {
+    this.resetLocalProduct()
+  }
+
+  resetLocalProduct() {
+    const { actions } = this.props
+    actions.contract.resetProduct()
   }
 
   getProduct() {
@@ -55,15 +71,13 @@ class ProductView extends Component {
 
   setProductView() {
     const { match, contract } = this.props
-    if(contract.products.length) {
-      this.setState({
-        contract_ref_id: parseInt(match.params.idRef),
-        product_id: contract.productRefId,
-        name: Web3.utils.toAscii(contract.productName),
-        price: parseInt(contract.productPrice),
-        stock: parseInt(contract.productStock)
-      })
-    }
+    this.setState({
+      contract_ref_id: parseInt(match.params.idRef),
+      product_id: contract.productRefId,
+      name: this.groomName(),
+      price: parseInt(contract.productPrice),
+      stock: parseInt(contract.productStock)
+    })
   }
 
   purchaseProduct=() => {
@@ -136,12 +150,6 @@ class ProductView extends Component {
           onClick={this.purchaseProduct}
         />
       </div>
-      <RaisedButton
-             className="btn"
-             label="Modal"
-             backgroundColor="#ffa000"
-             onClick={this.openModal}
-           />
       <Modal title="Purchase Submitted!" content={modalContent} />
     </div>
     )

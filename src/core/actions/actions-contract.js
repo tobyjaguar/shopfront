@@ -137,6 +137,15 @@ function getAddressFromContract(ShopFrontContract, account, resolve) {
  /**
   * Dispatch
   */
+function dispatchToRoute(route, dispatch) {
+  dispatch((() => {
+    return {
+      type: constants.PUSH_ROUTE,
+      route: route
+    }
+  })())
+}
+
 function dispatchShopCreated(txObj, expiration, dispatch) {
   dispatch((() => {
     return {
@@ -214,6 +223,18 @@ function dispatchQueryProduct(RefId, IdRefArray, dispatch) {
   })())
 }
 
+function dispatchResetProduct(dispatch) {
+  dispatch((() => {
+    return {
+      type: constants.QUERY_PRODUCT,
+      productRefId: 0,
+      productName: '',
+      productPrice: 0,
+      productStock: 0
+    }
+  })())
+}
+
 function dispatchResetProductList(dispatch) {
   dispatch((() => {
     return {
@@ -269,7 +290,11 @@ function dispatchTogglePurchaseModal(toggleValue, dispatch) {
  /**
   * Exports
   */
-
+export function pushRoute(route) {
+  return (dispatch) => {
+    dispatchToRoute(route, dispatch)
+  }
+}
 export function createShop(expiration) {
   return (dispatch, getState) => {
     const { web3Provider, account } = getState().provider
@@ -378,6 +403,12 @@ export function getProductFromShop(refID) {
         dispatchQueryProduct(refID,idArray, dispatch)
       }
     })
+  }
+}
+
+export function resetProduct() {
+  return (dispatch) => {
+    dispatchResetProduct(dispatch)
   }
 }
 

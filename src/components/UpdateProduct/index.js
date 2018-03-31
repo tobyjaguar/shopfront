@@ -47,6 +47,12 @@ class UpdateProduct extends Component {
     const { actions } = this.props
     const productName = Web3.utils.toHex(this.state.name)
     actions.contract.updateProductToShop(this.state.refID, productName, this.state.price, this.state.stock)
+    this.setState({
+      refID: 0,
+      name: '',
+      price: 0,
+      stock: 0
+    })
   }
 
   render() {

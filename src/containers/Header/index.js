@@ -1,15 +1,16 @@
-import  React, { Component }   from  'react';
-import  { connect }            from  'react-redux';
-import  { bindActionCreators } from  'redux';
-import  AppBar                 from  'components/AppBar';
-import  RaisedButton           from 'material-ui/RaisedButton';
-import { withRouter }         from  'react-router-dom';
+import  React, { Component }   from  'react'
+import  { connect }            from  'react-redux'
+import  { bindActionCreators } from  'redux'
+import  AppBar                 from  'components/AppBar'
+import  RaisedButton           from 'material-ui/RaisedButton'
+import { withRouter }         from  'react-router-dom'
 
 /* actions */
-import * as uiActionCreators from 'core/actions/actions-ui';
+import * as uiActionCreators from 'core/actions/actions-ui'
+import * as contractActionCreators from 'core/actions/actions-contract'
 
 /* component styles */
-import { styles } from './styles.scss';
+import { styles } from './styles.scss'
 
 class Header extends Component {
   constructor(props) {
@@ -21,8 +22,9 @@ class Header extends Component {
   }
 
   linkHome=() => {
-    const { history } = this.props
+    const { history, actions } = this.props
     history.push('/shop')
+    actions.contract.pushRoute(history.location.pathname)
   }
 
   render() {
@@ -56,7 +58,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      ui: bindActionCreators(uiActionCreators, dispatch)
+      ui: bindActionCreators(uiActionCreators, dispatch),
+      contract: bindActionCreators(contractActionCreators, dispatch)
     }
   };
 }

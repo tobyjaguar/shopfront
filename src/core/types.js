@@ -6,6 +6,7 @@ export default keyMirror({
   WEB3_INITIALIZED      : null,
   SET_PROVIDER          : null,
   SET_ACCOUNT           : null,
+  PUSH_ROUTE            : null,
   CREATE_SHOP           : null,
   ADD_PRODUCT           : null,
   GET_PRODUCT           : null,

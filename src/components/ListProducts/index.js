@@ -3,16 +3,14 @@ import  { connect }             from  'react-redux'
 import  { bindActionCreators }  from  'redux'
 import  { Link }                from  'react-router-dom'
 import  Web3                    from  'web3'
-import  RaisedButton            from  'material-ui/RaisedButton'
 import  GetProduct              from  'components/GetProduct'
+import InitProductList          from  'components/InitProductList'
 
 /* component styles */
 import { styles } from './styles.scss'
 
 /* actions */
 import * as contractActionCreators from 'core/actions/actions-contract'
-
-import InitProductList          from  'components/InitProductList'
 
 class ListProducts extends Component {
   constructor(props) {
@@ -52,18 +50,10 @@ class ListProducts extends Component {
   }
 
   render() {
-    const { contract } = this.props
     const products = this.displayProducts()
     return (
       <div className={styles}>
-        <div>{contract.totalProducts.toString(10)}</div>
         { products }
-        <RaisedButton
-               className="btn"
-               label="Get"
-               backgroundColor="#ffa000"
-               onClick={this.resetFromClick}
-             />
         <InitProductList />
       </div>
     );

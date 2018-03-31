@@ -1,6 +1,7 @@
 import constants from 'core/types'
 
 const initialState = {
+  route: null,
   createdTX: null,
   expiration: 0,
   success: false,
@@ -8,12 +9,12 @@ const initialState = {
   adminAddress: '',
   addProductTX: null,
   productID: 0,
+  productRefId: 0,
   productName: '',
   productPrice: 0,
   productStock: 0,
   idAdded: false,
   banned: '',
-  productRefId: 0,
   totalProducts: 0,
   products: [],
   purchaseTX: '',
@@ -27,6 +28,10 @@ const initialState = {
 export function contractReducer(state = initialState, action) {
   switch (action.type) {
 
+  case constants.PUSH_ROUTE:
+    return Object.assign({}, state, {
+      route: action.route
+    })
   case constants.CREATE_SHOP:
     return Object.assign({}, state, {
       createdTX: action.transaction,
@@ -52,6 +57,7 @@ export function contractReducer(state = initialState, action) {
     })
   case constants.QUERY_PRODUCT:
     return Object.assign({}, state, {
+      productRefId: action.productRefId,
       productName: action.productName,
       productPrice: action.productPrice,
       productStock: action.productStock

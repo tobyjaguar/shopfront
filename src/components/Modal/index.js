@@ -21,6 +21,7 @@ class Modal extends Component {
     const { history, actions } = this.props
     actions.contract.togglePurchaseModal(false)
     history.push('/shop')
+    actions.contract.pushRoute(history.location.pathname)
   }
 
   handleClose=() => {

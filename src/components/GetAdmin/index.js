@@ -13,23 +13,29 @@ class GetAdmin extends Component {
     super(props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(prevProps) {
+    if(prevProps.provider.web3Provider !== this.props.provider.web3Provider)
+    {
+      this.getAdminAddress()
+    }
+  }
+
+  componentDidMount() {
     const { contract } = this.props
-    if(nextProps.provider.web3Provider !== null && contract.adminAddress === '') {
+    if(contract.adminAddress === ''){
       this.getAdminAddress()
     }
   }
 
   getAdminAddress() {
-    const { actions, contract } = this.props
-    if(contract.adminAddress === '0x0000000000000000000000000000000000000000') {
+    const { actions, provider } = this.props
+    if(provider.web3Provider !== null) {
       actions.contract.getAdminFromShop()
     }
   }
 
   render() {
     const { contract } = this.props
-    this.getAdminAddress()
     return (
       <div className={styles}>
         Shop Admin: { contract.adminAddress }

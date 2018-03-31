@@ -42,6 +42,11 @@ class AddProduct extends Component {
     const { actions } = this.props
     const productName = Web3.utils.toHex(this.state.name)
     actions.contract.addProductToShop(productName, this.state.price, this.state.stock)
+    this.setState({
+      name: '',
+      price: 0,
+      stock: 0
+    })
   }
 
   render() {

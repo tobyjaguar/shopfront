@@ -1,6 +1,7 @@
-import React, { Component } from  'react';
+import React, { Component }   from  'react'
 import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { withRouter }         from  'react-router-dom'
 
 /* components */
 import CreateShop           from  'components/CreateShop'
@@ -22,6 +23,11 @@ import * as contractActionCreators from 'core/actions/actions-contract'
 class Home extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    const { actions, history } = this.props
+    actions.contract.pushRoute(history.location.pathname)
   }
 
   render() {
@@ -58,10 +64,6 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
-
-}
-
 function mapStateToProps(state) {
   return {
     provider: state.provider,
@@ -79,4 +81,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));

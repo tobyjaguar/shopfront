@@ -22,7 +22,9 @@ class GetProduct extends Component {
   render() {
     return (
       <div className={styles}>
-        <div className="label">{this.props.name}</div>
+        <div id="features" className="section">
+          <h3>{this.props.name}</h3>
+        </div>
       </div>
     );
   }
