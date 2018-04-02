@@ -38,6 +38,9 @@ class ProductView extends Component {
     if(nextProps.provider.web3Provider !== provider.web3Provider) {
       this.getProduct()
     }
+    if(nextProps.contract.productStock !== contract.productStock) {
+      this.setProductView()
+    }
   }
 
   componentDidUpdate(prevProps) {
